@@ -53,4 +53,5 @@ This will output the following token:
 ```eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzZXJJRCIsImVtYWlsIjoidXNlckVtYWlsIn0.OiPJ-aUppP04heWHrAShMbwzqcrQPbhHDgh474Ds6mg```  
 ## Check a token  
 In order to check a token you simply have to use the opposite command used to create the token, in this case:  
-```$token->checkHS256('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzZXJJRCIsImVtYWlsIjoidXNlckVtYWlsIn0.OiPJ-aUppP04heWHrAShMbwzqcrQPbhHDgh474Ds6mg', $key);```
+```$token->checkHS256('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzZXJJRCIsImVtYWlsIjoidXNlckVtYWlsIn0.OiPJ-aUppP04heWHrAShMbwzqcrQPbhHDgh474Ds6mg', $key);```  
+It will output ```true``` or ```false```, while it will ```die``` an error if mistaken algorithm is chosen.
