@@ -8,13 +8,13 @@ You can import this library simply downloading the archive and importing the fil
 
 How it works
 ------------
-#### Standard header and payloads:  
+### Standard header and payloads:  
 If you don't set up any attributes, standard one are  
 Header: ```["alg"=> "HS256", "typ"=> "JWT"];```  
 Payload: ```["id"=> "$this->userID", "email"=> "$this->userEmail"];```  
 Payload (if your algorithm is nor SHA-256"): ```["id"=> "$this->userID", "email"=> "$this->userEmail", "admin"=> true];```  
 
-#### Recalling class and defining variables:
+### Recalling class and defining variables:
 Firstly, ou have to recall the class Token() in your file, and, if you want to use standard token, specify userID, userEmail and admin:  
 ```tk = new Token($userID, $userEmail, true);```  
 
