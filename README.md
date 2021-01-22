@@ -4,7 +4,7 @@ This library check the token for multiple aspects: it controls if the key is cor
 
 Getting started
 ---------------
-You can import this library simply downloading the archive and importing the file in your project.
+You can import this library simply downloading the archive and importing the file in your project. **It does not require Composer**
 
 How it works
 ------------
