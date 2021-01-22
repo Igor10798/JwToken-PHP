@@ -1,15 +1,15 @@
-# **JwToken**
+# JwToken
 This is s short and light library that lets you create your jwt Token with SHA-256, SHA-384 and SHA-512.  
-I am currently adding other algorithms to this library.
+This library check the token for multiple aspects: it controls if the key is correct, if it has been inserted a valid algorithm (in order to avoid "none algorithm") and if the data matches with the user's, guaranteeing a high-security level. 
 
 Getting started
-===============
+---------------
 You can import this library in 2 ways:  
 **on-line mode**: using HTTPS link to this file: *link*.  
 **off-line mode**: just downloading the archive and importing the file in your project.
 
 How it works
-============
+------------
 ## Standard header and payloads:  
 If you don't set up any attributes, standard one are  
 Header: ```["alg"=> "HS256", "typ"=> "JWT"];```  
@@ -37,3 +37,20 @@ Only "key" is a mandatory attribute to this function, if you left empy the other
 Only "key" is a mandatory attribute to this function, if you left empy the others it will check a token with e-mail, id and admin information.  
   ```checkHS512($token, $key, $payload);```  
 Only "key" is a mandatory attribute to this function, if you left empy the others it will check a token with e-mail, id and admin information.  
+
+Example
+-------
+## Build a token  
+Firstly, we define the parameters for Payload (or define an our own Payload or Header):  
+```$userId = 'id';``` and ```$userEmail = 'email';```  
+Then, we recall the class:  
+``` $token = new Token($userId, $userEmail);```  
+Now we have to choose a key for our token:  
+```$key = 'key';```  
+Now we can build our token with every algorithm we desire:  
+```$token->encodeHS256($key);```  
+This will output the following token:  
+```eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzZXJJRCIsImVtYWlsIjoidXNlckVtYWlsIn0.OiPJ-aUppP04heWHrAShMbwzqcrQPbhHDgh474Ds6mg```  
+## Check a token  
+In order to check a token you simply have to use the opposite command used to create the token, in this case:  
+```$token->checkHS256('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzZXJJRCIsImVtYWlsIjoidXNlckVtYWlsIn0.OiPJ-aUppP04heWHrAShMbwzqcrQPbhHDgh474Ds6mg', $key);```
