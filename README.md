@@ -22,7 +22,7 @@ Firstly, ou have to recall the class Token() in your file, and, if you want to u
 
 ## Available functions:
   ```encodeToken($key, $header, $payload);```   
-Only "key" is a mandatory attribute to this function, if you left empy the others it will output a token hashed with SHA-256 with e-mail and id information.
+Only "key" is a mandatory attribute to this function, if you left empy the others it will output a token hashed with SHA-256 with e-mail and id information.  
   ```encodeHS256($key, $payload);```  
 Only "key" is a mandatory attribute to this function, if you left empy the others it will output a token with e-mail and id information.  
   ```encodeHS384($key, $payload);```  
